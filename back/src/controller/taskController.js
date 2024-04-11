@@ -9,6 +9,7 @@ async function storeTask(request, response) {
   const query = "INSERT INTO tasks(title,description) VALUE(?,?)";
 
   connection.query(query, params, (err, results) => {    
+    console.log(err, results);
     if (results) {
       response
         .status(201)
