@@ -5,10 +5,10 @@ async function storeTask(request, response) {
     request.body.title,
     request.body.description
   );
-
+  
   const query = "INSERT INTO tasks(title,description) VALUE(?,?)";
 
-  connection.query(query, params, (err, results) => {
+  connection.query(query, params, (err, results) => {    
     if (results) {
       response
         .status(201)
